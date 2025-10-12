@@ -7,7 +7,7 @@ import pytesseract
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
-TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "YOUR_TELEGRAM_BOT_TOKEN")
+TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "8262121748:AAH_tqT0xvv0yOUY1O4hGuiU8Cvt6_MVNME")
 TESSERACT_LANG = os.environ.get("TESSERACT_LANG", "eng")
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
