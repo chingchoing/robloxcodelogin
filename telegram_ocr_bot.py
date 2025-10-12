@@ -51,8 +51,6 @@ def handle_photo(update: Update, context: CallbackContext):
         file.download(out=bio)
         bio.seek(0)
         pil_img = Image.open(bio).convert("RGB")
-
-        msg = message.reply_text("Processing image for OCR...")
         text = perform_ocr(pil_img)
 
         if text:
