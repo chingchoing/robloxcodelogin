@@ -7,6 +7,9 @@ import pytesseract
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
+photo_filter = Filters.photo | (Filters.document & Filters.document.mime_type("image/"))
+dp.add_handler(MessageHandler(photo_filter & (Filters.chat_type.private | Filters.chat_type.groups), handle_photo))
+
 TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "8262121748:AAH_tqT0xvv0yOUY1O4hGuiU8Cvt6_MVNME")
 TESSERACT_LANG = os.environ.get("TESSERACT_LANG", "eng")
 
