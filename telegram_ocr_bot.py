@@ -94,7 +94,7 @@ def handle_image(update: Update, context: CallbackContext):
         pil_img = Image.open(bio).convert("RGB")
 
         # Notify user
-        processing_msg = message.reply_text("🕓 Extracting text...")
+        processing_msg = message.reply_text("🕓")
 
         # Run OCR
         text = perform_ocr(pil_img)
@@ -112,7 +112,7 @@ def handle_image(update: Update, context: CallbackContext):
                     caption="📄 Extracted text attached.",
                 )
             else:
-                message.reply_text(f"📝 *Extracted text:*\n\n{text}", parse_mode="Markdown")
+                message.reply_text(f"{text}", parse_mode="Markdown")
         else:
             message.reply_text("😕 No readable text found in that image.")
 
